@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Happy Birthday, Maggieee
 
-## Getting Started
+A single-page birthday card website for Maggie / Dua, built with Next.js (App Router), Tailwind CSS, and Framer Motion.
 
-First, run the development server:
+## Suggested folder structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```text
+public/
+  images/
+    photo1.jpg
+    photo2.jpg
+    photo3.jpg
+src/
+  app/
+    layout.tsx
+    page.tsx
+    globals.css
+  components/
+    HeroSection.tsx
+    CakeSection.tsx
+    PhotoGallery.tsx
+    MessageLetter.tsx
+    FloatingDecorations.tsx
+    Footer.tsx
+    BirthdayCake.tsx
+    PolaroidCard.tsx
+    SectionHeading.tsx
+    SparkleBackground.tsx
+    ConfettiEffect.tsx
+    ornaments.tsx
+  lib/
+    content.ts      # all text + photo paths
+    sound.ts        # optional celebration sound
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Then open [http://localhost:3000](http://localhost:3000).
 
-## Learn More
+## Required packages
 
-To learn more about Next.js, take a look at the following resources:
+Already listed in `package.json`:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `next`
+- `react`
+- `react-dom`
+- `framer-motion`
+- `tailwindcss`
+- `typescript`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## How to personalize later
 
-## Deploy on Vercel
+1. Replace the photos in `public/images/` with the same names:
+   - `/images/photo1.jpg`
+   - `/images/photo2.jpg`
+   - `/images/photo3.jpg`
+2. Or change the paths and captions in `src/lib/content.ts`.
+3. Edit the letter, titles, and footer in that same file.
+4. To disable the candle sound, set `ENABLE_BLOW_SOUND` to `false` in `src/lib/content.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Production
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run lint
+npm run typecheck
+npm run build
+npm start
+```
+
+This is a Next.js App Router app at the repository root. On Vercel, import `venkatbs500/Vinay`, keep **Next.js** as the framework, use **main** as the production branch, and leave the Root Directory empty.
